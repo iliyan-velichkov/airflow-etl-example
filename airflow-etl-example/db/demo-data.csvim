@@ -1,0 +1,16 @@
+{
+    "datasource": "demo-postgre",
+    "files": [
+        {
+            "table": "source_students",
+            "schema": "public",
+            "file": "/airflow-etl-example/db/source_students.csv",
+            "header": true,
+            "useHeaderNames": true,
+            "delimField": ",",
+            "delimEnclosing": "\"",
+            "distinguishEmptyFromNull": true,
+            "version": "1.0"
+        }
+    ]
+}

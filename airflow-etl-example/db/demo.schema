@@ -1,0 +1,69 @@
+{
+    "datasource": "demo-postgre",
+    "schema": {
+        "structures": [
+            {
+                "name": "source_students",
+                "type": "table",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "first_name",
+                        "type": "VARCHAR",
+                        "length": "50",
+                        "nullable": "false",
+                        "primaryKey": "false",
+                        "defaultValue": ""
+                    },
+                    {
+                        "name": "last_name",
+                        "type": "VARCHAR",
+                        "length": "50",
+                        "nullable": "false",
+                        "primaryKey": "false",
+                        "defaultValue": ""
+                    }
+                ]
+            },
+            {
+                "name": "target_students",
+                "type": "table",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "length": "0",
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "precision": "",
+                        "scale": ""
+                    },
+                    {
+                        "name": "first_name",
+                        "type": "VARCHAR",
+                        "length": "50",
+                        "nullable": "false",
+                        "primaryKey": "false",
+                        "defaultValue": ""
+                    },
+                    {
+                        "name": "last_name",
+                        "type": "VARCHAR",
+                        "length": "50",
+                        "nullable": "false",
+                        "primaryKey": "false",
+                        "defaultValue": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
