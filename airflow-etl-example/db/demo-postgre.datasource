@@ -1,0 +1,8 @@
+{
+    "location": "/airflow-etl-example/db/demo-postgre.datasource",
+    "name": "demo-postgre",
+    "driver": "org.postgresql.Driver",
+    "url": "jdbc:postgresql://postgres:5432/postgres",
+    "username": "custom_user",
+    "password": "custom_password" 
+} 
