@@ -8,7 +8,7 @@ SELECT * FROM target_students ORDER by id LIMIT 10;
 
 SELECT COUNT(*) FROM target_students;
 
--- join two tables
+-- join `source_students` with `target_students`
 SELECT s.id, s.first_name as source_first_name, t.first_name as target_first_name, s.last_name as source_last_name, t.last_name as target_last_name
 FROM source_students as s
 INNER JOIN target_students as t
