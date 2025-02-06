@@ -9,8 +9,8 @@ from tasks.load_task import load
 DB_CONFIG = {
     "host": "postgres",
     "database": "postgres",
-    "user": "custom_user",
-    "password": "custom_password",
+    "user": "postgres",
+    "password": "postgres",
     "port": 5432
 }
 
