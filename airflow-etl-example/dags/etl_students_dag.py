@@ -1,9 +1,9 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
-from tasks.extract_task import extract
-from tasks.transform_task import transform
-from tasks.load_task import load
+from extract_task import extract
+from transform_task import transform
+from load_task import load
 
 # Database configuration (hardcoded)
 DB_CONFIG = {
