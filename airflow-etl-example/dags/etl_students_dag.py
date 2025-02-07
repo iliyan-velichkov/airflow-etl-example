@@ -1,9 +1,15 @@
+import sys
+import os
+
+# Add the DAG directory to sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
-from extract_task import extract
-from transform_task import transform
-from load_task import load
+from tasks.extract_task import extract
+from tasks.transform_task import transform
+from tasks.load_task import load
 
 # Database configuration (hardcoded)
 DB_CONFIG = {
@@ -20,11 +26,11 @@ default_args = {
 }
 
 with DAG(
-    'etl_students_dag',
-    default_args=default_args,
-    description='A modular ETL pipeline for students',
-    schedule_interval=None,
-    catchup=False,
+        'etl_students_dag',
+        default_args=default_args,
+        description='A modular ETL pipeline for students',
+        schedule_interval=None,
+        catchup=False,
 ) as dag:
 
     extract_task = PythonOperator(
