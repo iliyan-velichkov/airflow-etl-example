@@ -5,9 +5,14 @@ set -e
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') --- $1"
 }
-log "Executing Linux build script..."
+log "Executing macOS build script..."
 
-script_path=$(realpath "$0")
+# Determine script path in a macOS-compatible way
+if command -v readlink >/dev/null 2>&1; then
+    script_path=$(readlink -f "$0")
+else
+    script_path="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+fi
 script_dir=$(dirname "$script_path")
 project_name=$(basename "$script_dir")
 log "Script path: $script_path"
@@ -60,4 +65,4 @@ else
 fi
 
 log "Copy operation completed."
-log "Linux build script $script_path completed!"
+log "macOS build script $script_path completed!"
