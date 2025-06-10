@@ -1,4 +1,4 @@
 # airflow-etl-example
-An example Apache Airflow project for the codbex Airflow project 
+An example project for the [codbex Phoebe](https://github.com/codbex/codbex-phoebe) 
 
 --- 
