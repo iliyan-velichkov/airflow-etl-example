@@ -1,6 +1,12 @@
 import sys
 import os
 
+# add the *parent* directory of the DAG file to sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# now explicitly add the `tasks/` directory to sys.path too
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tasks'))
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
