@@ -1,8 +1,11 @@
 import sys
 import os
 
-# Add the DAG directory to sys.path
+# add the *parent* directory of the DAG file to sys.path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# now explicitly add the `tasks/` directory to sys.path too
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tasks'))
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -11,7 +14,7 @@ from tasks.extract_task import extract
 from tasks.transform_task import transform
 from tasks.load_task import load
 
-# Database configuration (hardcoded)
+# database configuration (hardcoded)
 DB_CONFIG = {
     "host": "postgres",
     "database": "postgres",
@@ -26,30 +29,28 @@ default_args = {
 }
 
 with DAG(
-        'etl_students_dag',
-        default_args=default_args,
-        description='A modular ETL pipeline for students',
-        schedule_interval=None,
-        catchup=False,
+    dag_id='etl_students_dag',
+    default_args=default_args,
+    description='A modular ETL pipeline for students',
+    schedule=None,  # Explicit name (Airflow 3 prefers it)
+    catchup=False,
+    tags=['etl']
 ) as dag:
 
     extract_task = PythonOperator(
         task_id='extract_task',
         python_callable=extract,
-        provide_context=True,
         op_kwargs={'db_config': DB_CONFIG}
     )
 
     transform_task = PythonOperator(
         task_id='transform_task',
-        python_callable=transform,
-        provide_context=True
+        python_callable=transform
     )
 
     load_task = PythonOperator(
         task_id='load_task',
         python_callable=load,
-        provide_context=True,
         op_kwargs={'db_config': DB_CONFIG}
     )
 
