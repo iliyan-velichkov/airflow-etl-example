@@ -2,7 +2,7 @@
     "datasource": "demo-postgre",
     "files": [
         {
-            "table": "source_employees",
+            "table": "SOURCE_EMPLOYEES",
             "schema": "public",
             "file": "/airflow-etl-example/db/source_employees.csv",
             "header": true,
