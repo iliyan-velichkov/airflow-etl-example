@@ -29,10 +29,10 @@ default_args = {
 }
 
 with DAG(
-    dag_id='etl_students_dag',
+    dag_id='etl_employees_dag',
     default_args=default_args,
-    description='A modular ETL pipeline for students',
-    schedule=None,  # Explicit name (Airflow 3 prefers it)
+    description='A modular ETL pipeline for employees',
+    schedule=None,
     catchup=False,
     tags=['etl']
 ) as dag:

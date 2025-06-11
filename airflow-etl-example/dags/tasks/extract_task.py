@@ -6,7 +6,7 @@ def extract(**kwargs):
     cursor = conn.cursor()
 
     # Extract data
-    cursor.execute("SELECT ID, FIRST_NAME, LAST_NAME FROM SOURCE_STUDENTS")
+    cursor.execute("SELECT ID, FIRST_NAME, LAST_NAME FROM SOURCE_EMPLOYEES")
     rows = cursor.fetchall()
 
     # Pass the extracted data to the next task

@@ -3,11 +3,11 @@
     "schema": {
         "structures": [
             {
-                "name": "source_students",
+                "name": "SOURCE_EMPLOYEES",
                 "type": "table",
                 "columns": [
                     {
-                        "name": "id",
+                        "name": "ID",
                         "type": "INTEGER",
                         "length": "0",
                         "primaryKey": "true",
@@ -16,7 +16,7 @@
                         "scale": ""
                     },
                     {
-                        "name": "first_name",
+                        "name": "FIRST_NAME",
                         "type": "VARCHAR",
                         "length": "50",
                         "nullable": "false",
@@ -24,7 +24,7 @@
                         "defaultValue": ""
                     },
                     {
-                        "name": "last_name",
+                        "name": "LAST_NAME",
                         "type": "VARCHAR",
                         "length": "50",
                         "nullable": "false",
@@ -34,11 +34,11 @@
                 ]
             },
             {
-                "name": "target_students",
+                "name": "TARGET_STUDENTS",
                 "type": "table",
                 "columns": [
                     {
-                        "name": "id",
+                        "name": "ID",
                         "type": "INTEGER",
                         "length": "0",
                         "primaryKey": "true",
@@ -47,7 +47,7 @@
                         "scale": ""
                     },
                     {
-                        "name": "first_name",
+                        "name": "FIRST_NAME",
                         "type": "VARCHAR",
                         "length": "50",
                         "nullable": "false",
@@ -55,7 +55,7 @@
                         "defaultValue": ""
                     },
                     {
-                        "name": "last_name",
+                        "name": "LAST_NAME",
                         "type": "VARCHAR",
                         "length": "50",
                         "nullable": "false",

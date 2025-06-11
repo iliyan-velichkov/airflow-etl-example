@@ -10,7 +10,7 @@ def load(**kwargs):
 
     for row in transformed_data:
         cursor.execute("""
-            INSERT INTO TARGET_STUDENTS (ID, FIRST_NAME, LAST_NAME)
+            INSERT INTO TARGET_EMPLOYEES (ID, FIRST_NAME, LAST_NAME)
             VALUES (%s, %s, %s)
             ON CONFLICT (ID) DO UPDATE
             SET FIRST_NAME = EXCLUDED.FIRST_NAME,
