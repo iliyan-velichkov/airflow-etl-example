@@ -1,17 +1,17 @@
--- SOURCE_EMPLOYEES table
-SELECT * FROM SOURCE_EMPLOYEES ORDER by ID LIMIT 10;
+-- source_employees table
+SELECT * FROM source_employees ORDER by id LIMIT 10;
 
-SELECT COUNT(*) FROM SOURCE_EMPLOYEES;
+SELECT COUNT(*) FROM source_employees;
 
--- TARGET_STUDENTS table
-SELECT * FROM TARGET_STUDENTS ORDER by ID LIMIT 10;
+-- target_employees table
+SELECT * FROM target_employees ORDER by id LIMIT 10;
 
-SELECT COUNT(*) FROM TARGET_STUDENTS;
+SELECT COUNT(*) FROM target_employees;
 
--- join `SOURCE_EMPLOYEES` with `TARGET_STUDENTS`
-SELECT s.ID, s.FIRST_NAME as SOURCE_FIRST_NAME, t.FIRST_NAME as TARGET_FIRST_NAME, s.LAST_NAME as SOURCE_LAST_NAME, t.LAST_NAME as TARGET_LAST_NAME
-FROM SOURCE_EMPLOYEES as s
-INNER JOIN TARGET_STUDENTS as t
+-- join `source_employees` with `target_employees`
+SELECT s.id, s.first_name as SOURCE_first_name, t.first_name as TARGET_first_name, s.last_name as SOURCE_last_name, t.last_name as TARGET_last_name
+FROM source_employees as s
+INNER JOIN target_employees as t
 ON s.id=t.id
 ORDER by id
 LIMIT 10;

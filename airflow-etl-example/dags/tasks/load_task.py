@@ -10,11 +10,11 @@ def load(**kwargs):
 
     for row in transformed_data:
         cursor.execute("""
-            INSERT INTO TARGET_EMPLOYEES (ID, FIRST_NAME, LAST_NAME)
+            INSERT INTO target_employees (id, first_name, last_name)
             VALUES (%s, %s, %s)
-            ON CONFLICT (ID) DO UPDATE
-            SET FIRST_NAME = EXCLUDED.FIRST_NAME,
-                LAST_NAME = EXCLUDED.LAST_NAME
+            ON CONFLICT (id) DO UPDATE
+            SET first_name = EXCLUDED.first_name,
+                last_name = EXCLUDED.last_name
         """, row)
 
     conn.commit()
